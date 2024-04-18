@@ -1,0 +1,51 @@
+{
+  "policy_id": "shipping_policy",
+  "title": "Shipping & Delivery Policy",
+  "version": "1.8",
+  "effective_date": "2024-05-15",
+  "status": "active",
+  "category": "shipping",
+  "sections": [
+    {
+      "section_id": "shipping_policy-s1",
+      "title": "Delivery Timelines",
+      "content": "Standard shipping: 5-7 business days. Express: 2-3 business days. International: 10-15 business days. Delivery dates are estimates and not guaranteed. Delays due to carrier or customs are not eligible for automatic compensation.",
+      "keywords": [
+        "standard",
+        "express",
+        "international",
+        "estimates"
+      ],
+      "conditions": []
+    },
+    {
+      "section_id": "shipping_policy-s2",
+      "title": "Lost Shipments",
+      "content": "If tracking shows no update for 7 business days, agent may initiate trace with carrier. If confirmed lost after 14 business days with no delivery, replacement or refund may be issued after verification.",
+      "keywords": [
+        "lost",
+        "tracking",
+        "trace",
+        "replacement",
+        "14 days"
+      ],
+      "conditions": [
+        "no update 7 days",
+        "confirmed lost 14 days"
+      ]
+    },
+    {
+      "section_id": "shipping_policy-s3",
+      "title": "Tracking Information",
+      "content": "Tracking numbers are generated at shipment. Agent must provide correct tracking from order system; must not invent tracking numbers. If order not yet shipped, inform customer with expected ship date.",
+      "keywords": [
+        "tracking",
+        "invent",
+        "shipment"
+      ],
+      "conditions": [
+        "correct tracking"
+      ]
+    }
+  ]
+}

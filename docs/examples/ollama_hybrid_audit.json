@@ -1,0 +1,198 @@
+{
+  "evidence_type": "single_local_model_smoke_test_not_benchmark",
+  "captured_at_utc": "2026-10-19T13:37:12Z",
+  "request": {
+    "case_id": "OLLAMA-EVIDENCE-001",
+    "category": "order_status",
+    "customer_message": "Where is my order ORD-78421? I need tracking ASAP.",
+    "candidate_response": "Your order is on the way! Your tracking number is TRK-FAKE-0001234 and it will arrive tomorrow at 3pm sharp.",
+    "facts": {
+      "order_id": "ORD-78421",
+      "order_status": "shipped",
+      "tracking_number": "TRK-APX-992381"
+    },
+    "expected_actions": [
+      "provide tracking"
+    ],
+    "expected_escalation": "resolve",
+    "severity": "high",
+    "policy_ids": [
+      "shipping_policy"
+    ],
+    "evaluation_mode": "hybrid",
+    "provider": "ollama",
+    "model": "qwen2.5:3b"
+  },
+  "http_status": 200,
+  "elapsed_seconds": 165.52,
+  "result": {
+    "case_id": "OLLAMA-EVIDENCE-001",
+    "overall_score": 42,
+    "dimension_scores": [
+      {
+        "dimension": "factual_accuracy",
+        "score": 1,
+        "explanation": "LLM hypothesis requiring human verification: Order status is 'shipped' but candidate response states 'on the way'. Tracking number is 'TRK-APX-992381' but customer message asks for 'ORD-78421'.",
+        "evidence": [
+          "Response tracking identifier TRK-FAKE-0001234 differs from verified value TRK-APX-992381"
+        ],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "completeness",
+        "score": 2,
+        "explanation": "LLM hypothesis requiring human verification: Candidate response provides only tracking information, missing order status and expected delivery date.",
+        "evidence": [],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "policy_compliance",
+        "score": 1,
+        "explanation": "LLM hypothesis requiring human verification: Candidate response does not comply with shipping policy as it provides a fake tracking number and does not provide the correct order status.",
+        "evidence": [],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "hallucination",
+        "score": 1,
+        "explanation": "LLM hypothesis requiring human verification: Candidate response contains a fake tracking number and incorrect order status.",
+        "evidence": [
+          "Specific delivery timing claimed without verified delivery estimate",
+          "Response includes a tracking identifier that differs from verified context"
+        ],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "resolution_guidance",
+        "score": 2,
+        "explanation": "LLM hypothesis requiring human verification: Candidate response does not provide any guidance or action.",
+        "evidence": [],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "tone_clarity",
+        "score": 3,
+        "explanation": "LLM hypothesis requiring human verification: Response is unclear and does not match the customer's request.",
+        "evidence": [
+          "Limited empathy cues"
+        ],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "privacy_safety",
+        "score": 4,
+        "explanation": "LLM hypothesis requiring human verification: Response does not address customer's privacy concerns.",
+        "evidence": [],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "escalation",
+        "score": 1,
+        "explanation": "LLM hypothesis requiring human verification: Candidate response does not address escalation as it provides no information about the order status.",
+        "evidence": [
+          "Escalation appropriate: resolve; response passage: your order is on the way! your tracking number is trk-fake-0001234 and it will arrive tomorrow at 3pm sharp."
+        ],
+        "confidence": 0.45
+      },
+      {
+        "dimension": "actionability",
+        "score": 2,
+        "explanation": "LLM hypothesis requiring human verification: Candidate response does not provide actionable information.",
+        "evidence": [],
+        "confidence": 0.45
+      }
+    ],
+    "decision": "Human Review Required",
+    "decision_reason": "Material issues requiring human judgment. (hybrid: deterministic safety checks + bounded LLM judgment)",
+    "escalation": {
+      "expected": "resolve",
+      "actual": "resolve",
+      "correct": true,
+      "verdict": "appropriate",
+      "urgency": "low",
+      "destination": null,
+      "reason": "Expected escalation provided as ground truth: resolve",
+      "evidence": [
+        "Escalation appropriate: resolve; response passage: your order is on the way! your tracking number is trk-fake-0001234 and it will arrive tomorrow at 3pm sharp."
+      ]
+    },
+    "policy_refs": [
+      {
+        "policy_id": "shipping_policy",
+        "version": "1.8",
+        "section": "Tracking Information",
+        "excerpt": "Tracking numbers are generated at shipment. Agent must provide correct tracking from order system; must not invent tracking numbers. If order not yet shipped, inform customer with expected ship date.",
+        "relevance": 0.2
+      },
+      {
+        "policy_id": "shipping_policy",
+        "version": "1.8",
+        "section": "Lost Shipments",
+        "excerpt": "If tracking shows no update for 7 business days, agent may initiate trace with carrier. If confirmed lost after 14 business days with no delivery, replacement or refund may be issued after verification.",
+        "relevance": 0.15000000000000002
+      },
+      {
+        "policy_id": "shipping_policy",
+        "version": "1.8",
+        "section": "Delivery Timelines",
+        "excerpt": "Standard shipping: 5-7 business days. Express: 2-3 business days. International: 10-15 business days. Delivery dates are estimates and not guaranteed. Delays due to carrier or customs are not eligible for automatic compensation.",
+        "relevance": 0.05
+      }
+    ],
+    "hard_stop_triggered": false,
+    "hard_stop_reasons": [],
+    "missing_info": [
+      "Order status, expected delivery date, correct tracking number, and order status information are missing in the candidate response."
+    ],
+    "improvement_suggestions": [
+      "Provide accurate order status, correct tracking number, and expected delivery date in the response."
+    ],
+    "evidence_highlights": [
+      "Response tracking identifier TRK-FAKE-0001234 differs from verified value TRK-APX-992381",
+      "Specific delivery timing claimed without verified delivery estimate",
+      "Response includes a tracking identifier that differs from verified context",
+      "Limited empathy cues"
+    ],
+    "hallucination_flags": [
+      "LLM hypothesis requiring human verification: Candidate response contains a fake tracking number and incorrect order status."
+    ],
+    "uncertainty_flags": [
+      "One or more judge citations could not be verified as an exact excerpt from supplied customer, response, or policy text; treat model reasoning as a hypothesis."
+    ],
+    "strengths": [
+      "completeness: All expected actions addressed (using domain-aware phrase matching).",
+      "privacy_safety: No privacy violation detected.",
+      "escalation: Expected resolve, actual resolve: appropriate. Expected escalation provided as ground truth: resolve"
+    ],
+    "confidence": 0.67,
+    "confidence_basis": "Minimum of deterministic evidence-coverage estimate and LLM self-reported confidence; neither is calibrated probability.",
+    "evaluation_mode": "hybrid",
+    "evaluator_model": "qwen2.5:3b",
+    "evaluation_config": {
+      "weights": {
+        "factual_accuracy": 0.15,
+        "completeness": 0.12,
+        "policy_compliance": 0.18,
+        "hallucination": 0.15,
+        "resolution_guidance": 0.1,
+        "tone_clarity": 0.06,
+        "privacy_safety": 0.1,
+        "escalation": 0.08,
+        "actionability": 0.06
+      },
+      "thresholds": {
+        "approve": 85,
+        "revision": 65,
+        "human_review": 40
+      },
+      "rubric_version": "1.1",
+      "project_id": "default"
+    }
+  },
+  "notes": [
+    "The customer message, candidate response, facts, and policies are fictional/synthetic.",
+    "This is one non-deterministic local-model run, not a benchmark or accuracy estimate.",
+    "The judge completed without falling back to deterministic mode; citations that could not be verified are labeled as hypotheses.",
+    "Model reasoning can be internally inconsistent; human review remains required."
+  ]
+}

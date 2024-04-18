@@ -1,0 +1,73 @@
+{
+  "policy_id": "refund_policy",
+  "title": "Refund & Return Policy",
+  "version": "2.1",
+  "effective_date": "2024-06-01",
+  "status": "active",
+  "category": "refund",
+  "sections": [
+    {
+      "section_id": "refund_policy-s1",
+      "title": "Eligibility",
+      "content": "Refunds are eligible only within 30 days of delivery. Items must be unused, in original packaging with tags attached. Digital products and perishable goods are non-refundable. Orders exceeding the 30-day window are not eligible for refund; customer may be offered store credit at support discretion but no automatic refund.",
+      "keywords": [
+        "refund",
+        "eligible",
+        "30 days",
+        "unused",
+        "non-refundable"
+      ],
+      "conditions": [
+        "within 30 days",
+        "unused"
+      ]
+    },
+    {
+      "section_id": "refund_policy-s2",
+      "title": "Refund Process",
+      "content": "To initiate a refund, customer must contact support with order ID and reason, provide photo evidence if item is damaged or incorrect, and return item using prepaid label if requested. Refunds are processed to original payment method within 5-10 business days after receipt and inspection.",
+      "keywords": [
+        "process",
+        "photo",
+        "return",
+        "label",
+        "5-10 days"
+      ],
+      "conditions": [
+        "provide evidence",
+        "return item"
+      ]
+    },
+    {
+      "section_id": "refund_policy-s3",
+      "title": "Exceptions & Authorization",
+      "content": "Exceptions beyond 30 days require supervisor approval and are limited to store credit. Support agents must not promise refunds outside policy without escalation to supervisor. Any refund above $200 requires manager approval.",
+      "keywords": [
+        "exception",
+        "supervisor",
+        "store credit",
+        "manager approval",
+        "$200"
+      ],
+      "conditions": [
+        "supervisor approval",
+        "manager approval"
+      ]
+    },
+    {
+      "section_id": "refund_policy-s4",
+      "title": "Duplicate Charges",
+      "content": "Duplicate charges must be verified via billing system before crediting. Agent should confirm transaction IDs and not issue duplicate refund for same charge. Escalate to Billing Specialist if charge cannot be verified.",
+      "keywords": [
+        "duplicate",
+        "billing",
+        "transaction",
+        "billing specialist"
+      ],
+      "conditions": [
+        "verify transaction",
+        "escalate"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+```mermaid
+sequenceDiagram
+  actor Analyst
+  participant UI as Streamlit UI
+  participant API as FastAPI
+  participant KB as Versioned Policy Store
+  participant Rules as Deterministic Engine
+  participant LLM as Optional Provider
+  participant DB as SQLite
+  Analyst->>UI: Submit request, response, facts, mode
+  UI->>Analyst: Show external-transfer warning if LLM mode
+  UI->>API: POST /api/audit
+  API->>KB: Retrieve active/effective policy sections
+  API->>Rules: Run facts, policy, privacy, hard-stop, escalation checks
+  alt LLM/hybrid selected and configured
+    API->>LLM: Send untrusted content with bounded judge prompt
+    LLM-->>API: Strict typed JSON judgment
+    API->>API: Verify cited passages; preserve deterministic hard stops
+  else Offline or provider unavailable
+    API->>API: Use deterministic result / transparent fallback
+  end
+  API->>DB: Persist result, config snapshot, provenance
+  API-->>UI: Explainable score, evidence, decision, uncertainty
+  UI-->>Analyst: Display review, export, or record human annotation
+```

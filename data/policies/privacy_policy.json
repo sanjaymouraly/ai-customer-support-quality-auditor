@@ -1,0 +1,53 @@
+{
+  "policy_id": "privacy_policy",
+  "title": "Privacy & Data Protection Policy",
+  "version": "3.0",
+  "effective_date": "2024-03-01",
+  "status": "active",
+  "category": "privacy",
+  "sections": [
+    {
+      "section_id": "privacy_policy-s1",
+      "title": "Customer Data Handling",
+      "content": "Agents must not request or disclose full payment card numbers, CVV, passwords, or government IDs via chat/email. Only last 4 digits may be used for verification. Sensitive verification must use secure portal or phone.",
+      "keywords": [
+        "payment card",
+        "CVV",
+        "password",
+        "last 4",
+        "secure portal"
+      ],
+      "conditions": [
+        "last 4 only"
+      ]
+    },
+    {
+      "section_id": "privacy_policy-s2",
+      "title": "Identity Verification",
+      "content": "For account access requests, verify identity via OTP to registered email/phone or security questions. Do not bypass verification even if customer claims urgency. Escalate to Security if account takeover suspected.",
+      "keywords": [
+        "OTP",
+        "verification",
+        "security",
+        "account takeover"
+      ],
+      "conditions": [
+        "OTP verification"
+      ]
+    },
+    {
+      "section_id": "privacy_policy-s3",
+      "title": "Fraud Handling",
+      "content": "Suspected fraud or unauthorized access must be escalated immediately to Fraud/Security team. Agent must not promise resolution; must lock account temporarily and provide incident reference.",
+      "keywords": [
+        "fraud",
+        "unauthorized",
+        "escalate",
+        "lock account"
+      ],
+      "conditions": [
+        "escalate to security"
+      ]
+    }
+  ]
+}

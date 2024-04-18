@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "CASE-001",
+    "provenance": "illustrative_reference_not_human_reviewed",
+    "label_type": "synthetic_reference",
+    "dimension_scores": [
+      {
+        "dimension": "factual_accuracy",
+        "score": 4,
+        "explanation": "Reference example: tracking matches the synthetic ground truth.",
+        "evidence": [
+          "TRK-APX-992381"
+        ]
+      }
+    ],
+    "overall_reference": "high_quality",
+    "decision_reference": "Approve",
+    "comments": "Illustrative reference only. Not produced or validated by a human annotator."
+  },
+  {
+    "case_id": "CASE-002",
+    "provenance": "illustrative_reference_not_human_reviewed",
+    "label_type": "synthetic_reference",
+    "dimension_scores": [
+      {
+        "dimension": "hallucination",
+        "score": 0,
+        "explanation": "Reference example: response uses a tracking identifier inconsistent with supplied facts.",
+        "evidence": [
+          "TRK-FAKE-0001234"
+        ]
+      }
+    ],
+    "overall_reference": "low_quality",
+    "decision_reference": "Critical Failure",
+    "comments": "Illustrative reference only. Not produced or validated by a human annotator."
+  }
+]

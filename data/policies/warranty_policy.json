@@ -1,0 +1,39 @@
+{
+  "policy_id": "warranty_policy",
+  "title": "Warranty & Replacement Policy",
+  "version": "1.2",
+  "effective_date": "2024-02-20",
+  "status": "active",
+  "category": "warranty",
+  "sections": [
+    {
+      "section_id": "warranty_policy-s1",
+      "title": "Warranty Coverage",
+      "content": "Electronics carry 1-year limited warranty covering manufacturing defects only. Warranty does not cover accidental damage, misuse, or normal wear. Claim requires proof of purchase and photo/video of defect.",
+      "keywords": [
+        "1-year",
+        "manufacturing defects",
+        "accidental damage",
+        "proof of purchase"
+      ],
+      "conditions": [
+        "proof of purchase",
+        "photo evidence"
+      ]
+    },
+    {
+      "section_id": "warranty_policy-s2",
+      "title": "Replacement Process",
+      "content": "If defect confirmed, agent may authorize replacement after verification. Customer returns defective item first; replacement ships upon receipt. No lifetime warranty.",
+      "keywords": [
+        "replacement",
+        "defective",
+        "no lifetime warranty"
+      ],
+      "conditions": [
+        "return defective",
+        "verification"
+      ]
+    }
+  ]
+}

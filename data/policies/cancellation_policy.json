@@ -1,0 +1,35 @@
+{
+  "policy_id": "cancellation_policy",
+  "title": "Order Cancellation Policy",
+  "version": "1.4",
+  "effective_date": "2024-05-01",
+  "status": "active",
+  "category": "cancellation",
+  "sections": [
+    {
+      "section_id": "cancellation_policy-s1",
+      "title": "Cancellation Window",
+      "content": "Orders can be cancelled before shipment. Once shipped, cancellation is not possible; customer must follow return process. Cancellation requests after shipment must be politely declined with return instructions.",
+      "keywords": [
+        "cancel",
+        "before shipment",
+        "shipped",
+        "return"
+      ],
+      "conditions": [
+        "before shipment"
+      ]
+    },
+    {
+      "section_id": "cancellation_policy-s2",
+      "title": "Refund on Cancellation",
+      "content": "Cancelled orders are refunded to original payment method within 3-5 business days. Agent must confirm cancellation success and provide confirmation number.",
+      "keywords": [
+        "refunded",
+        "3-5 days",
+        "confirmation"
+      ],
+      "conditions": []
+    }
+  ]
+}

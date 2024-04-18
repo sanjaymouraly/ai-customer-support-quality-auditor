@@ -1,0 +1,35 @@
+```mermaid
+flowchart TD
+  CustomerMsg[Customer message + facts + expected actions] --> Retrieve[Lexical policy retrieval
+active/effective versions + category hints]
+  PolicyKB[(Versioned policy KB
+7 fictional starter policies)] --> Retrieve
+  Workspace[Workspace / project
+policy scope] --> Retrieve
+  Retrieve --> Eval{Evaluation mode}
+  Eval -->|Deterministic| Det[Deterministic engine
+rules, regex, heuristics
+hard stops, escalation]
+  Eval -->|LLM / Hybrid| LLM[Optional model judge
+OpenAI / Anthropic / OpenRouter
+custom / local Ollama
+structured JSON]
+  LLM --> Merge[Hybrid merge
+deterministic zeros and
+hard stops cannot be overridden]
+  Det --> Merge
+  Merge --> Result[Audit result
+9 dimensions, 0-100 score,
+decision, evidence, uncertainty]
+  Result --> API[(FastAPI + SQLite)]
+  API --> Frontend[Streamlit UI
+overview, single audit, batch,
+scenarios, policies, escalations,
+human review, comparison, analytics,
+settings]
+  Result --> Reports[CSV / JSON / HTML exports]
+  HumanReview[Human reviewer
+separate record] --> API
+  Settings[Encrypted provider
+connections] --> LLM
+```

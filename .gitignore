@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.venv.bak/
+auditor.db
+*.db
+*.sqlite3
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.DS_Store
+playwright-report/
+test-results/
+
+# Local runtime state (may contain secrets or user-authored material)
+data/provider_connections.json
+data/.provider_key
+data/app_settings.json
+data/custom_scenarios.json
+
+# Keep the Streamlit theme and server config in version control.
+!/.streamlit/config.toml
+
+# Local caches and generated files
+node_modules/
+dist/
+build/
+coverage/
+.next/
+*.log
+CHANGELOG.md

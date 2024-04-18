@@ -1,0 +1,55 @@
+{
+  "policy_id": "escalation_policy",
+  "title": "Escalation & Support Boundaries",
+  "version": "1.5",
+  "effective_date": "2024-04-10",
+  "status": "active",
+  "category": "escalation",
+  "sections": [
+    {
+      "section_id": "escalation_policy-s1",
+      "title": "When to Escalate",
+      "content": "Escalate to supervisor for: legal threats, requests exceeding $200 refund, policy exceptions, vulnerable customers (medical/financial distress), billing disputes over $500. Escalate to Security for fraud, account compromise. Escalate to Billing Specialist for duplicate charges or invoice disputes requiring system adjustment.",
+      "keywords": [
+        "supervisor",
+        "legal",
+        "$200",
+        "$500",
+        "security",
+        "billing specialist"
+      ],
+      "conditions": [
+        "legal threat",
+        "large refund",
+        "fraud"
+      ]
+    },
+    {
+      "section_id": "escalation_policy-s2",
+      "title": "Avoid Over-Escalation",
+      "content": "Do not escalate routine tracking inquiries, simple return instructions, or FAQs that agent can resolve directly. Over-escalation delays resolution and burdens specialist teams.",
+      "keywords": [
+        "over-escalation",
+        "routine",
+        "tracking"
+      ],
+      "conditions": []
+    },
+    {
+      "section_id": "escalation_policy-s3",
+      "title": "Escalation Procedure",
+      "content": "When escalating, acknowledge customer concern empathetically, state specific team and reason, provide ticket number and expected response time (24h for supervisor, 4h for security). Do not leave customer without next step.",
+      "keywords": [
+        "acknowledge",
+        "ticket",
+        "24h",
+        "4h",
+        "next step"
+      ],
+      "conditions": [
+        "provide ticket",
+        "timeline"
+      ]
+    }
+  ]
+}

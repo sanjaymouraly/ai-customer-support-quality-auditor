@@ -1,0 +1,45 @@
+{
+  "policy_id": "billing_policy",
+  "title": "Billing & Invoice Policy",
+  "version": "2.0",
+  "effective_date": "2024-06-10",
+  "status": "active",
+  "category": "billing",
+  "sections": [
+    {
+      "section_id": "billing_policy-s1",
+      "title": "Invoices",
+      "content": "Invoices are available in account portal under Billing. For invoice corrections, verify order details before reissuing. Do not modify billed amounts without billing system verification.",
+      "keywords": [
+        "invoice",
+        "portal",
+        "corrections"
+      ],
+      "conditions": []
+    },
+    {
+      "section_id": "billing_policy-s2",
+      "title": "Payment Failures",
+      "content": "Payment failures due to insufficient funds must be retried by customer. Agent may provide payment troubleshooting steps but must not store card details manually.",
+      "keywords": [
+        "payment failure",
+        "insufficient funds",
+        "troubleshooting"
+      ],
+      "conditions": []
+    },
+    {
+      "section_id": "billing_policy-s3",
+      "title": "Subscription Cancellation",
+      "content": "Subscriptions can be cancelled anytime effective next billing cycle. No prorated refund unless required by law or explicit promotion terms. Agent must confirm cancellation and provide confirmation.",
+      "keywords": [
+        "subscription",
+        "next billing cycle",
+        "no prorated refund"
+      ],
+      "conditions": [
+        "confirm cancellation"
+      ]
+    }
+  ]
+}
